@@ -103,19 +103,41 @@ h3 {
     color: var(--secundario);
 }
 
+/*Grid*/
+.grid {
+    display: grid; /*Activar CSSGrid*/
+    grid-template-columns: repeat(2, 1fr); /*Me da dos columnas divididas cada una en 1 fracción*/
+    /*
+    column-gap: 2rem; con esto puedo separar hacia los lados
+    row-gap: 2rem; con esto puedo serparar hacia abajo
+    */
+    gap: 2rem; /*Esto me separa a los lados y abajo, menos código*/
+}
+@media (min-width: 768px) { /*Cuando sobrepasa los 768px me muestra las 3 columnas y anula el mostrar 2 columnas*/
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 /*Productos*/
 .producto {
-
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
 }
 .producto__imagen {
-
-}
-.producto__informacion {
-
+    width: 100%; /*Toma todo el ancho disponible*/ 
 }
 .producto__nombre {
-
+    font-size: 4rem;
 }
 .producto__precio {
-    
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0; /*Para que el margen de separación solo sea de 10px arriba y abajo y de 0 a los lados*/
+    text-align: center;
+    line-height: 1.2;
 }
