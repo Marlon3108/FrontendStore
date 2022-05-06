@@ -166,3 +166,23 @@ h3 {
     }
 }
 
+/*Nosotros*/
+.nosotros {
+    display: grid; /*Este grid siempre va a aplicar a todo el diseño que tenga nosotros*/
+    grid-template-rows: repeat(2, auto); /*Esto para posicionar la imagen y el texto entre las filas que yo quiera*/
+}
+@media (min-width: 768px) { 
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem; /*Separación entre columnas osea derecha e izquierda*/
+    }
+}
+.nosotros__imagen {
+    grid-row: 1 / 2;
+    width: 100%; /*Para que tome el tamaño automaticamente*/
+}
+@media (min-width: 768px) { 
+    .nosotros__imagen{
+        grid-column: 2 / 3;
+    }
+}
