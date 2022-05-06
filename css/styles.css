@@ -141,3 +141,28 @@ h3 {
     text-align: center;
     line-height: 1.2;
 }
+
+/*Graficos*/
+.grafico {
+    /*En dispositivos moviles no va a tomar bien las posiciones que le de debido a que sobrepasa el limite que puede mostrar*/
+    min-height: 30rem; /*Altura mínima para ambos graficos*/
+    background-repeat: no-repeat; /*Para que no se repita la imagen*/
+    background-size: cover; /*Para que la imagen tome todo el espacio disponible*/
+}
+.grafico--camisas {
+    grid-row: 2 / 3; /*Le digo que posicione este modificador entre las filas 2 y 3*/
+    grid-column: 1 / 3; /*Le digo que posicione este modificador entre las columnas 1 y 3*/
+    background-image: url(../img/grafico1.jpg); /*Inserto una imagen porque esta solo es decoración*/
+}
+.grafico--nodeJs {
+    background-image: url(../img/grafico2.jpg);
+    grid-column: 1 / 3; /*Como la imagen solo coge una columna le digo que vaya de la columna 1 a la 3*/
+    grid-row: 8 / 9; 
+}
+@media (min-width: 768px) { 
+    .grafico--nodeJs {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
