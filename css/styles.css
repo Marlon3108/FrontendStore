@@ -36,7 +36,7 @@ a {
 }
 
 img {
-    max-width: 100%; /*Ancho*/
+    width: 100%; /*Ancho que aplica para todas las imagenes de la pagina*/
 }
 
 .contenedor{
@@ -124,9 +124,6 @@ h3 {
     background-color: var(--primarioOscuro);
     padding: 1rem;
 }
-.producto__imagen {
-    width: 100%; /*Toma todo el ancho disponible*/ 
-}
 .producto__nombre {
     font-size: 4rem;
 }
@@ -180,7 +177,6 @@ h3 {
 }
 .nosotros__imagen {
     grid-row: 1 / 2;
-    width: 100%; /*Para que tome el tamaño automaticamente*/
 }
 @media (min-width: 768px) { 
     .nosotros__imagen{
@@ -202,9 +198,50 @@ h3 {
 .bloque {
     text-align: center;
 }
-.bloque__imagen {
-    width: 100%; /*Esto es para hacer mas anchas la imagenes*/
-}
 .bloque__titulo {
     margin: 0; /*Todos los heading vienen con un margen por defecto, entonces se lo quitamos*/
+}
+
+/*Página del producto*/
+@media (min-width: 768px) { 
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+/*Formulario*/
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /*Separación*/
+}
+.formulario__campo {
+    /* 
+    border-color: var(--primarioOscuro);
+    border-width: 1rem;
+    border-style: solid; Esto crea una línea solida para el borde
+    Este codigo se puede simplificar siguiendo la manera de abajo. Ancho tipo color
+    */
+    border: 1rem solid var(--primarioOscuro);;
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+}
+.formulario__submit {
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;/*Esto nos crea una transición que va del color de este selector al color del selector con hover.
+    Luego se coloca que es lo que quiero que anime, luego el tiempo de transición y por ultimo el tipo de transición*/
+    grid-column: 1 / 3;
+}
+.formulario__submit:hover {
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
 }
