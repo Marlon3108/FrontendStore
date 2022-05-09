@@ -169,9 +169,10 @@ h3 {
 /*Nosotros*/
 .nosotros {
     display: grid; /*Este grid siempre va a aplicar a todo el diseño que tenga nosotros*/
-    grid-template-rows: repeat(2, auto); /*Esto para posicionar la imagen y el texto entre las filas que yo quiera*/
+    grid-template-rows: repeat(2, auto); /*Esto para posicionar la imagen y el texto entre las filas que yo quiera y auto es para
+    que tome el tamaño automaticamente y no halla algún espaciado*/
 }
-@media (min-width: 768px) { 
+@media (min-width: 768px) { /*Despues que sobrepasa los 768 el grid ya no es el filas sino en columnas*/
     .nosotros {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem; /*Separación entre columnas osea derecha e izquierda*/
@@ -185,4 +186,25 @@ h3 {
     .nosotros__imagen{
         grid-column: 2 / 3;
     }
+}
+
+/*Bloques*/
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /*Separación en todos los bordes*/
+}
+@media (min-width: 768px) { 
+    .bloques {
+        grid-template-columns: repeat(4, 1fr); /*Crear 4 columnas para cuando supere los 768px*/
+    }
+}
+.bloque {
+    text-align: center;
+}
+.bloque__imagen {
+    width: 100%; /*Esto es para hacer mas anchas la imagenes*/
+}
+.bloque__titulo {
+    margin: 0; /*Todos los heading vienen con un margen por defecto, entonces se lo quitamos*/
 }
